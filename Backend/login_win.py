@@ -93,6 +93,8 @@ class Ui_Form(object):
         font.setWeight(75)
         self.Password_space.setFont(font)
         self.Password_space.setObjectName("Password_space")
+        self.login_bttn = QtWidgets.QPushButton(self.widget, clicked = lambda: self.func())
+
         
         
         self.login_bttn = QtWidgets.QPushButton(self.widget_2)
