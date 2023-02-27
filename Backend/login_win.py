@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def func(self):
         
-        pass_path = "C:\\Users\\hadir\\Documents\\Philomath\\Docs\\passcodes.txt"
+        pass_path = "C:\\Users\\hadir\\Documents\\Philomath\\Docs\\passcodes.txt.txt"
         username_inputed = self.Username_space.text()
         password_inputed = self.Password_space.text()
         
