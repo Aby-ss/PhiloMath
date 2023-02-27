@@ -12,8 +12,32 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_Form(object):
+    def func(self):
+        
+        pass_path = "C:\\Users\\hadir\\Documents\\Philomath\\Docs\\passcodes.txt"
+        username_inputed = self.Username_space.text()
+        password_inputed = self.Password_space.text()
+        
+        with open(pass_path,'r') as file:
+                  for line in file:
+                        usernames = line.split()[0]
+                        passwords = line.split()[1]
+        
+        if (username_inputed == usernames) and (password_inputed == passwords):
+            print("ACESS GRANTED!")
+            
+            #self.window = QtWidgets.QDialog()
+            #self.ui = Ui_Main_Screen()
+            #self.ui.setupUi(self.window)
+            #self.window.show()
+        else:
+            print("ACESS DECLINED!")
+            self.close() 
+            #print(f"Your username is {username} and your password is {password}")
+            
+            
     def setupUi(self, Form):
-        Form.setObjectName("Form")
+        Form.setObjectName("PhiloMath - LOG IN")
         Form.resize(1199, 809)
         self.widget = QtWidgets.QWidget(Form)
         self.widget.setGeometry(QtCore.QRect(-11, -1, 1221, 201))
@@ -69,6 +93,8 @@ class Ui_Form(object):
         font.setWeight(75)
         self.Password_space.setFont(font)
         self.Password_space.setObjectName("Password_space")
+        
+        
         self.login_bttn = QtWidgets.QPushButton(self.widget_2)
         self.login_bttn.setGeometry(QtCore.QRect(450, 480, 341, 81))
         font = QtGui.QFont()
@@ -84,7 +110,7 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate("PhiloMath - LOG IN", "PhiloMath - LOG IN"))
         self.Philomath_header.setText(_translate("Form", "PHILOMATH"))
         self.Philomath_header_2.setText(_translate("Form", "LOG IN"))
         self.Philomath_header_3.setText(_translate("Form", "Username"))
